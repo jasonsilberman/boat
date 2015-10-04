@@ -77,7 +77,7 @@ var statement = false;
 assert(statement).false(); // true
 ```
 
-### Options
+## Options
 If your project needs a bit more finesse, that can be arrange too. All you need to do is pass a second argument to `boat.run`.
 
 ```js
@@ -89,13 +89,13 @@ boat.run(['./tests/*.test.js'], {
 });
 ```
 
-#### `before`
+### `before`
 If you need to run some kind of setup script before your tests are run, you can pass the scripts path to `before` and `boat` will run them for you.
 
-#### `after`
+### `after`
 If you need, `boat` can help you run a cleanup script, just pass a path to `after`.
 
-#### `reporter`
+### `reporter`
 The default reporter used by `boat` is [`dot`](lib/reporters/dot.js), however you pass a custom reporter if you would like. You can look in [here](lib/reporters/) to see all of the reporters included by default, but if you would like to use your own feel free.
 
 *Note:* When passing your own reporter, `boat` will check to see if there is a `/` in the name. If there is, it will check its own included reporters and if it does not find what the reporter there, it will just include the path combined with the current working directory. If there is no `/`, then it will just pass the reporter argument straight to `require`.
@@ -114,7 +114,7 @@ The default reporter used by `boat` is [`dot`](lib/reporters/dot.js), however yo
 }
 ```
 
-#### `...`
+### `...`
 All options that you pass to `boat.run` will be passed down to the reporter that is used. So, if your reporter accepts additionally arguments, you can put them in here.
 
 ## License
