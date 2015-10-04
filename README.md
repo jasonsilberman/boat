@@ -78,7 +78,7 @@ assert(statement).false(); // true
 ```
 
 ## Options
-If your project needs a bit more finesse, that can be arranged too. All you need to do is pass a second argument to `boat.run`.
+If your project needs a bit more finesse, that can be arranged too. All you need to do is pass a second argument to `boat.run()`.
 
 ```js
 var boat = require('boat');
@@ -115,7 +115,7 @@ The default reporter used by `boat` is [`dot`](lib/reporters/dot.js), however yo
 ```
 
 ### `...`
-All options that you pass to `boat.run` will be passed down to the reporter that is used. So, if your reporter accepts additionally arguments, you can put them in here.
+All options that you pass to `boat.run()` will be passed down to the reporter that is used. So, if your reporter accepts additionally arguments, you can put them in here.
 
 ## License
 `boat` is licensed under the MIT [license](LICENSE).
