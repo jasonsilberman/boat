@@ -23,6 +23,60 @@ var status = boat.run(['./tests/*.test.js']); // returns false if any tests fail
 
 *You can check out some examples of `boat` inside the [`examples/`](examples/) directory.*
 
+### Tests
+Writing tests is really easy. Here is a test from the [basic](examples/basic/) example.
+
+```js
+var test = require('boat').test;
+var Calc = require('../src/calc');
+
+test('calc', function (that) {
+  that('3 * 4 should = 12', function (assert) {
+    assert(Calc.times(3, 4)).equals(12);
+  });
+
+  that('3*3 should = 9', function (assert) {
+    assert(Calc.square(3)).equals(9);
+  });
+
+  that('sqrt 9 should = 3', function (assert) {
+    assert(Calc.root(9)).equals(3);
+  });
+});
+```
+
+### Assert
+There are four `assert` functions bundled with `boat`.
+
+#### `equals`
+This makes sure that things are equal.
+
+```js
+var age = 35;
+assert(age).equals(35); // true
+```
+#### `isA`
+This makes sure that the object is of a certain type.
+
+```js
+var name = 'boat';
+assert(name).isA('string'); // true
+```
+#### `true`
+This makes sure that the passed object is true.
+
+```js
+var statement = true;
+assert(statement).true(); // true
+```
+#### `false`
+This makes sure that the passed object is false.
+
+```js
+var statement = false;
+assert(statement).false(); // true
+```
+
 ### Options
 If your project needs a bit more finesse, that can be arrange too. All you need to do is pass a second argument to `boat.run`.
 
