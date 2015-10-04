@@ -1,0 +1,23 @@
+{
+  "name": "boat",
+  "version": "1.0.0",
+  "description": "A simple javascript testing framework",
+  "main": "index.js",
+  "author": "Jason Silberman <jason@implicity.co>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonsilberman/boat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jasonsilberman/boat/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.8.1",
+    "glob": "^5.0.15"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23"
+  }
+}
