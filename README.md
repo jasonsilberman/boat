@@ -78,7 +78,7 @@ assert(statement).false(); // true
 ```
 
 ## Options
-If your project needs a bit more finesse, that can be arrange too. All you need to do is pass a second argument to `boat.run`.
+If your project needs a bit more finesse, that can be arranged too. All you need to do is pass a second argument to `boat.run`.
 
 ```js
 var boat = require('boat');
