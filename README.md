@@ -1,4 +1,4 @@
-boat
+Boat
 ====
 A simple JavaScript testing framework.
 
@@ -7,11 +7,16 @@ A simple JavaScript testing framework.
 $ npm install boat
 ```
 
-## Usage
-Setting up your project to use `boat` is easy.
+*Note: If you plan on using the command-line utility, you should run `npm install boat -g` instead.*
 
+## Usage
+Setting up your project to use Boat is easy. There are two ways to use Boat: through the JavaScript API or through the command-line utility.
+
+*You can check out some examples of Boat inside the [`examples/`](examples/) directory.*
+
+### API
 1. Create a file to initiate your tests from (ie. `test.js`)
-2. Inside this newly created testing file, you need to initiate `boat` and tell it where your test files are.
+2. Inside this newly created testing file, you need to initiate Boat and tell it where your test files are.
 
 ```js
 var boat = require('boat');
@@ -21,7 +26,25 @@ var status = boat.run(['./tests/*.test.js']); // returns false if any tests fail
 
 3. That's it. You can then run your code with something like `node test.js` and you are good to go.
 
-*You can check out some examples of `boat` inside the [`examples/`](examples/) directory.*
+### CLI
+The Boat command-line utility is very easy to use.
+
+```
+$ boat <path>
+```
+
+There is only one argument, the path to the config file. If it is empty it will assume it is `./boat.config.js`.
+
+#### Config File
+This is what an example config file looks like.
+
+```js
+module.exports = {
+  files: ['./tests/*.test.js']
+};
+```
+
+The only thing that is required is `files`. Everything else in your config file will be passed to `boat.run()`.
 
 ### Tests
 Writing tests is really easy. Here is a test from the [basic](examples/basic/) example.
@@ -46,7 +69,7 @@ test('calc', function (that) {
 ```
 
 ### Assert
-There are four `assert` functions bundled with `boat`.
+There are four `assert` functions bundled with Boat.
 
 #### `equals`
 This makes sure that things are equal.
@@ -90,15 +113,15 @@ boat.run(['./tests/*.test.js'], {
 ```
 
 ### `before`
-If you need to run some kind of setup script before your tests are run, you can pass the scripts path to `before` and `boat` will run them for you.
+If you need to run some kind of setup script before your tests are run, you can pass the scripts path to `before` and Boat will run them for you.
 
 ### `after`
-If you need, `boat` can help you run a cleanup script, just pass a path to `after`.
+If you need, Boat can help you run a cleanup script, just pass a path to `after`.
 
 ### `reporter`
-The default reporter used by `boat` is [`dot`](lib/reporters/dot.js), however you pass a custom reporter if you would like. You can look in [here](lib/reporters/) to see all of the reporters included by default, but if you would like to use your own feel free.
+The default reporter used by Boat is [`dot`](lib/reporters/dot.js), however you pass a custom reporter if you would like. You can look in [here](lib/reporters/) to see all of the reporters included by default, but if you would like to use your own feel free.
 
-*Note:* When passing your own reporter, `boat` will check to see if there is a `/` in the name. If there is, it will check its own included reporters and if it does not find what the reporter there, it will just include the path combined with the current working directory. If there is no `/`, then it will just pass the reporter argument straight to `require`.
+*Note: When passing your own reporter, Boat will check to see if there is a `/` in the name. If there is, it will check its own included reporters and if it does not find what the reporter there, it will just include the path combined with the current working directory. If there is no `/`, then it will just pass the reporter argument straight to `require`.*
 
 ```js
 {
@@ -120,8 +143,8 @@ All options that you pass to `boat.run()` will be passed down to the reporter th
 ## Roadmap
 Features coming in future releases:
 
-- *cli*. You will be able to call `boat` from the command line.
-- *watch*. You will be able to have `boat` watch for changes in your tests and continually run them.
+- *cli*. You will be able to call Boat from the command line.
+- *watch*. You will be able to have Boat watch for changes in your tests and continually run them.
 
 ## License
-`boat` is licensed under the MIT [license](LICENSE).
+Boat is licensed under the MIT [license](LICENSE).
