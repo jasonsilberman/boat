@@ -113,10 +113,48 @@ boat.run(['./tests/*.test.js'], {
 ```
 
 ### `before`
-If you need to run some kind of setup script before your tests are run, you can pass the scripts path to `before` and Boat will run them for you.
+If you need to run some kind of setup script before your tests are run, you can pass the scripts path to `before` and Boat will run them for you. If you need to pass options to your `before` hook, just set `before` as an `object` with a `path` key.
+
+```js
+{
+  before: {
+    path: './tests/before.js',
+    optionForBeforeScript: 'secretive'
+  }
+}
+```
 
 ### `after`
-If you need, Boat can help you run a cleanup script, just pass a path to `after`.
+If you need, Boat can help you run a cleanup script, just pass a path to `after`. If you need to pass options to your `after` hook, just set `after` as an `object` with a `path` key.
+
+```js
+{
+  after: {
+    path: './tests/after.js',
+    optionForAfterScript: 'secretive'
+  }
+}
+```
+
+### `compiler`
+If your test code is written in a language that needs to be compiled (ie. CoffeScript or ES2015), then you should pass the `compile` option to `boat.run()`. It works the same as `before` and `after` where you can pass either a `string` or an `object`.
+
+```js
+{
+  compiler: 'babel/register'
+}
+```
+
+or
+
+```js
+{
+  compiler: {
+    path: 'babel/register',
+    stage: 0
+  }
+}
+```
 
 ### `reporter`
 The default reporter used by Boat is [`dot`](lib/reporters/dot.js), however you pass a custom reporter if you would like. You can look in [here](lib/reporters/) to see all of the reporters included by default, but if you would like to use your own feel free.
