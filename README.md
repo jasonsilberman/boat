@@ -143,7 +143,7 @@ All options that you pass to `boat.run()` will be passed down to the reporter th
 ## Roadmap
 Features coming in future releases:
 
-- *cli*. You will be able to call Boat from the command line.
+- ~~*cli*. You will be able to call Boat from the command line.~~
 - *watch*. You will be able to have Boat watch for changes in your tests and continually run them.
 
 ## License
