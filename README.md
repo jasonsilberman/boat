@@ -117,5 +117,11 @@ The default reporter used by `boat` is [`dot`](lib/reporters/dot.js), however yo
 ### `...`
 All options that you pass to `boat.run()` will be passed down to the reporter that is used. So, if your reporter accepts additionally arguments, you can put them in here.
 
+## Roadmap
+Features coming in future releases:
+
+- *cli*. You will be able to call `boat` from the command line.
+- *watch*. You will be able to have `boat` watch for changes in your tests and continually run them.
+
 ## License
 `boat` is licensed under the MIT [license](LICENSE).
