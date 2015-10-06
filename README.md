@@ -176,7 +176,7 @@ The default reporter used by Boat is [`dot`](lib/reporters/dot.js), however you 
 ```
 
 ### `...`
-All options that you pass to `boat.run()` will be passed down to the reporter that is used. So, if your reporter accepts additionally arguments, you can put them in here.
+All options that you pass to `boat.run()` will be passed down to the reporter that is used. So, if your reporter accepts additional arguments, you can put them in here.
 
 ## Roadmap
 Features coming in future releases:
