@@ -175,6 +175,24 @@ The default reporter used by Boat is [`dot`](lib/reporters/dot.js), however you 
 }
 ```
 
+### `watch` & `watchFiles`
+If you would like, you can have Boat watch for changes in your files. You can do this in two ways:
+
+```js
+{
+  watch: true
+}
+
+{
+  watch: true,
+  watchFiles: ['./src/*.js']
+}
+```
+
+Boat will watch for updates or creations of files in the specified `watchFiles`. If `watchFiles` is empty it will use the test files earlier specified.
+
+*Note: Boat can only watch for creations of files if you only specify the directory and not paths to file or wildcards.*
+
 ### `...`
 All options that you pass to `boat.run()` will be passed down to the reporter that is used. So, if your reporter accepts additional arguments, you can put them in here.
 
@@ -182,7 +200,7 @@ All options that you pass to `boat.run()` will be passed down to the reporter th
 Features coming in future releases:
 
 - ~~*cli*. You will be able to call Boat from the command line.~~
-- *watch*. You will be able to have Boat watch for changes in your tests and continually run them.
+- ~~*watch*. You will be able to have Boat watch for changes in your tests and continually run them.~~
 
 ## License
 Boat is licensed under the MIT [license](LICENSE).
