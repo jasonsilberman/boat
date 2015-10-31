@@ -7,7 +7,7 @@ module.exports = {
     return total;
   },
   sub: function (a, b) {
-    return this.sum(a, b);
+    return this.sum(a, -b);
   },
   add: function (a, b) {
     return this.sum(a, b);
